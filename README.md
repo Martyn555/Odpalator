@@ -1,6 +1,6 @@
 *MCServerlauncher* to idealne narzędzie dla własnego hosta serwerów minecraft na systemie Windows.
 
-MCServerlauncher. Odpalator należy umieścić w katalogu z silnikiem gry i wywołać z konsoli lub innego programu wsadowego, używając odpowiednich parametrów.
+MCServerlauncher. Odpalator należy umieścić w katalogu z silnikiem gry i wywołać z konsoli lub za pomocą innego programu wsadowego, używając odpowiednich parametrów.
 
 INSTRUKCJA: Aby poprawnie używać odpalatora użyj polecenia call odpalator [argument 1] [argument 2] [argument 3] [argument 4] [argument 5] [argument 6] Argument 1 odpowiada za wybór w menu.
 
