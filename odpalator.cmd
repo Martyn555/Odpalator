@@ -2,14 +2,14 @@
 call coding UTF-8
 call config
 shutdown /a
-
+rem Martyn's Studio
 set par1=%~1
 set par2=%~2
 set par3=%~3
 set par4=%~4
 set par5=%~5
 set par6=%~6
-
+rem Martyn's Studio
 title Serwer %NazwaSerwera%
 if Motyw==ciemny set color=0a
 if Motyw==jasny set color=f0
@@ -20,7 +20,7 @@ if %1==1 goto start
 if %1==2 goto settings
 if %1==3 goto info
 goto menu
-
+rem Martyn's Studio
 :menu
 cls
 call colortext %colors%^6 "%NazwaSerwera%" 0
@@ -35,12 +35,10 @@ if %errorlevel%== 1 goto start
 if %errorlevel%== 2 goto settings
 if %errorlevel%== 3 goto info
 if %errorlevel%== 4 exit
-
-
-
+rem Martyn's Studio
 :start
 cls
-
+rem Martyn's Studio
 rem shutdown
 if %par1:~0,9%==shutdown@ set AwaryjneWylaczenie=%par1:~9%
 if %par2:~0,9%==shutdown@ set AwaryjneWylaczenie=%par2:~9%
@@ -83,30 +81,30 @@ if %par3:~0,5%==name@ set NazwaSerwera=%par3:~5%
 if %par4:~0,5%==name@ set NazwaSerwera=%par4:~5%
 if %par5:~0,5%==name@ set NazwaSerwera=%par5:~5%
 if %par6:~0,5%==name@ set NazwaSerwera=%par6:~5%
-
+rem Martyn's Studio
 call colortext %colors%^6 "%NazwaSerwera% %Silnik%" 1
 echo.
 call colortext %colors%^3 "Nazwa serwera" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %NazwaSerwera%" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "Motyw" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %Motyw%" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "RAM" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %RAM% GB" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "Silnik" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %Silnik%" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "Awaryjne wyłączenie" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %AwaryjneWylaczenie%" 1
 echo.
-
+rem Martyn's Studio
 java -Xmx%RAM%G -jar %Silnik%.jar
 cd ..
 cd ..
@@ -114,29 +112,27 @@ if NOT %KopiaZapasowa%== brak echo Trwa kopiowanie serwera, nie zamykaj okna i s
 if NOT %KopiaZapasowa%== brak xcopy Serwer\*.* %KopiaZapasowa%\%NazwaSerwera%_KZ_%date% /s /d /y /i
 if NOT %AwaryjneWylaczenie%== brak shutdown /s /t %AwaryjneWylaczenie% /c "Komputer zostanie wyłączony w ciągu %AwaryjneWylaczenie% sekund od zaqmknięcia serwera w celach uniknięcia przepięć podczas wyładowań atmosferycznych. Aby zapobiec wyłączeniu użyj polecenia shutdown /a lub uruchom ponownie serwer."
 exit
-
-
-
+rem Martyn's Studio
 :settings
 cls
 echo Aktualnie ustawienia:
-
+rem Martyn's Studio
 call colortext %colors%^3 "Nazwa serwera" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %NazwaSerwera%" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "Motyw" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %Motyw%" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "RAM" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %RAM% GB" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "Silnik" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %Silnik%" 1
-
+rem Martyn's Studio
 call colortext %colors%^3 "Awaryjne wyłączenie" 0
 call colortext %colors%^5 " =" 0
 call colortext %colors%^6 " %AwaryjneWylaczenie%" 1
@@ -148,9 +144,7 @@ choice /n /c:123 /M ":"
 if %errorlevel%== 1 goto resettings
 if %errorlevel%== 2 goto przywracanie
 if %errorlevel%== 3 goto menu
-
-
-
+rem Martyn's Studio
 :resettings
 cls
 echo Uzupełnij ustawienia.
@@ -170,9 +164,7 @@ echo set KopiaZapasowa=%KopiaZapasowa%>>config.cmd
 echo set Silnik=%Silnik%>>config.cmd
 echo set AwaryjneWylaczenie=%AwaryjneWylaczenie%>>config.cmd
 goto settings
-
-
-
+rem Martyn's Studio
 :przywracanie
 cls
 echo rem %date%>config.cmd
@@ -186,9 +178,7 @@ call config
 echo Ustawienia przywrócone.
 timeout 1 /nobreak >nul
 goto settings
-
-
-
+rem Martyn's Studio
 :info
 cls
 echo Aby poprawnie używać odpalatora użyj polecenia call odpalator [argument 1] [argument 2] [argument 3] [argument 4] [argument 5] [argument 6]
